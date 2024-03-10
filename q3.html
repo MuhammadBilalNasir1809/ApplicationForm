@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyFORM</title>
+    <link rel="stylesheet" href="/q3.css">
+</head>
+
+<body>
+
+    <div id ="con"class="container">
+        <h2 id="h2tag">Job Application Form</h2>
+        <form id="jobApplicationForm" onsubmit="return validateForm()">
+            <h3>Personal Information</h3>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" required>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+            <label for="zipCode">ZIP Code:</label>
+            <input type="text" id="zipCode" name="zipCode" required>
+
+    
+            <h3>Resume and Cover Letter</h3>
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+            <label for="coverLetter">Cover Letter:</label>
+            <textarea id="coverLetter" name="coverLetter" rows="4" required></textarea>
+
+            
+            <h3>Education</h3>
+            <label for="educationLevel">Highest Level of Education Attained:</label>
+            <select id="educationLevel" name="educationLevel" required>
+                <option value="">Select</option>
+                <option value="High School">High School</option>
+                <option value="Associate Degree">Associate Degree</option>
+                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                <option value="Master's Degree">Master's Degree</option>
+                <option value="Doctorate">Doctorate</option>
+            </select>
+            <label for="schoolName">Name of School/University:</label>
+            <input type="text" id="schoolName" name="schoolName" required>
+            <label for="major">Major/Area of Study:</label>
+            <input type="text" id="major" name="major" required>
+            <label for="graduationYear">Graduation Year:</label>
+            <input type="text" id="graduationYear" name="graduationYear" required>
+
+            
+            <h3>Employment History</h3>
+            <label for="jobTitle">Previous Job Title:</label>
+            <input type="text" id="jobTitle" name="jobTitle" required>
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" name="company" required>
+            <label for="employmentDates">Employment Dates:</label>
+            <input type="text" id="employmentDates" name="employmentDates" required>
+            <label for="jobResponsibilities">Job Responsibilities:</label>
+            <textarea id="jobResponsibilities" name="jobResponsibilities" rows="4" required></textarea>
+            
+            
+            <h3>Skills</h3>
+            <label for="relevantSkills">Relevant Skills:</label>
+            <input type="text" id="relevantSkills" name="relevantSkills" required>
+            <label for="certifications">Certifications:</label>
+            <input type="text" id="certifications" name="certifications">
+            
+            
+            <h3>Availability</h3>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+            <label for="workSchedule">Preferred Work Schedule:</label>
+            <input type="text" id="workSchedule" name="workSchedule" required>
+            <label for="relocate">Willingness to Relocate:</label>
+            <select id="relocate" name="relocate" required>
+                <option value="">Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            
+            
+            <h3>References</h3>
+            <label for="refName">Reference Name:</label>
+            <input type="text" id="refName" name="refName" required>
+            <label for="refContact">Reference Contact Information:</label>
+            <input type="text" id="refContact" name="refContact" required>
+            <label for="refRelation">Relationship to Applicant:</label>
+            <input type="text" id="refRelation" name="refRelation" required>
+            
+
+            
+            <h3>Additional Questions</h3>
+            <label for="whyWorkHere">Why do you want to work for this company?</label>
+            <textarea id="whyWorkHere" name="whyWorkHere" rows="4" required></textarea>
+
+          
+            <h3>Consent and Agreement</h3>
+            <label><input type="checkbox" id="termsAgreement" required> I agree to the terms and conditions</label>
+            <label><input type="checkbox" id="privacyPolicy" required> I acknowledge the privacy policy</label>
+
+            
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+    <div class="viewcontainer">
+        <button id="viewApplicationsBtn" class="hidden" onclick="viewApplications()">View Applications as Table</button>
+
+        <!-- Table to display applications -->
+        <div id="applicationTable" class="hidden">
+            <h2>Applications</h2>
+            <table id="applicationsTable">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="applicationsTableBody">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./q3.js"></script>
+</body>
+
+</html>
